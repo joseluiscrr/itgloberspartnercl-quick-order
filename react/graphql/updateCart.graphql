@@ -1,0 +1,5 @@
+mutation UPDATE_CART($item: [ItemInput], $salesChannel: String) {
+  addToCart(item: $items, salesChannel: $salesChannel) {
+    id
+  }
+}
