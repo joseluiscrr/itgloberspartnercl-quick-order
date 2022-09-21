@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useMutation, useLazyQuery } from "react-apollo";
 import UPDATE_CART from "../graphql/updateCart.graphql";
 import GET_PRODUCT from "../graphql/getProductBySku.graphql";
+import styles from "./styles.css";
 
 const QuickOrder = () => {
   const [inputText, setInputText] = useState("");
@@ -51,12 +52,12 @@ const QuickOrder = () => {
   }, [product, search]);
 
   return (
-    <div>
-      <h2>Compra rápida de VTEX IO</h2>
-      <form onSubmit={searchProduct}>
-        <label htmlFor="sku">Ingresa el número de SKU</label>
-        <input id="sku" type="text" onChange={handleChange} />
-        <input type="submit" value="Añadir el carrito" />
+    <div className={`${styles.quick__order}`}>
+      <h1 className={`${styles["quick__order--title"]}`}>Quick Order</h1>
+      <form onSubmit={searchProduct} className={`${styles["quick__order--form"]}`}>
+        <label htmlFor="sku" className={`${styles.form__label}`}>Ingresa el número de SKU deseado:</label>
+        <input placeholder="SKU..." id="sku" type="text" onChange={handleChange} className={`${styles.form__input}`} />
+        <input type="submit" value="Añadir el carrito" className={`${styles.form__submit}`} />
       </form>
     </div>
   );
