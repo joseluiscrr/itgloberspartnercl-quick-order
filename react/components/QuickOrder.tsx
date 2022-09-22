@@ -15,12 +15,8 @@ const QuickOrder = () => {
 
   const searchProduct = (event: any) => {
     event.preventDefault();
-    if (!inputText) alert("Oiga, ingrese algo");
-    else {
-      console.log("Al final estamos buscando:", inputText);
-      setSearch(inputText);
-      addProductToCart();
-    };
+    if (!inputText) alert("Por favor ingresa un SKU");
+    else setSearch(inputText); addProductToCart();
   };
 
   const addProductToCart = () => {
@@ -32,7 +28,6 @@ const QuickOrder = () => {
   };
 
   useEffect(() => {
-    console.log("El resultado de mi producto es", product, search)
     if (product) {
       let skuId = parseInt(inputText);
       addToCart({
@@ -45,9 +40,9 @@ const QuickOrder = () => {
           }]
         }
       })
-      .then(() => {
-        window.location.href = "/"
-      })
+        .then(() => {
+          window.location.href = "/checkout";
+        });
     };
   }, [product, search]);
 
