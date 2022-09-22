@@ -1,6 +1,6 @@
 query($sku: ID!) {
-  product(identifier: {field: sku, value: $slu}) {
-    productId,
+  product(identifier: {field: sku, value: $sku}) {
+    productId
     productName
   }
 }
