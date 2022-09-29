@@ -1,3 +1,5 @@
-import QuickOrder from "./components/QuickOrder";
+// * Encapsulamiento del componente para protegerlo
 
-export default QuickOrder;
+import QuickOrder from "./components/QuickOrder"; // * Llamada al componente principal
+
+export default QuickOrder; // ! Exportación obligatoria
